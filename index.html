@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="여러 AI 에이전트가 일을 나누고, 서로의 결과를 이어받는 방식을 탐구합니다.">
+<meta name="author" content="박연서">
+<meta name="keywords" content="박연서, 산업경영공학, 멀티 에이전트, AI 에이전트 협업, 역할 분담, 결과 인계, AI 타로카드, 오늘의 타로, Figma Make">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="박연서 — AI 에이전트 협업 포트폴리오">
+<meta property="og:description" content="여러 AI 에이전트가 일을 나누고, 서로의 결과를 이어받는 방식을 탐구합니다. 대표 프로젝트는 AI 타로카드 ‘오늘의 타로’입니다.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="박연서 — AI 에이전트 협업 포트폴리오">
+<meta name="twitter:description" content="여러 AI 에이전트가 일을 나누고, 서로의 결과를 이어받는 방식을 탐구합니다. 대표 프로젝트는 AI 타로카드 ‘오늘의 타로’입니다.">
+<title>박연서 — AI 에이전트 협업 포트폴리오</title>
+<style>
+:root{color-scheme:light;--paper:#f4f1ea;--ink:#262823;--soft:#53574b;--line:#bcbcb0;--accent:#c8e681;--gutter:clamp(1rem,5vw,5rem);--ease:cubic-bezier(.22,.61,.36,1);--duration:300ms}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.6 system-ui,sans-serif}a{color:inherit;text-underline-offset:.25em}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #465c26;outline-offset:4px}h1,h2,h3,p,figure{margin:0}header,main,footer{padding-inline:var(--gutter)}header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-block:1.25rem;border-bottom:1px solid var(--line)}nav{display:flex;flex-wrap:wrap;gap:1rem}.brand{font:600 1.1rem Georgia,serif}.hero{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:clamp(1.5rem,6vw,7rem);padding-block:clamp(3rem,9vw,10rem)}.hero h1{font:400 clamp(3.5rem,10vw,10rem)/1.3 Georgia,serif;letter-spacing:-.075em;margin-block:.2em .25em}.hero h1 span{display:block;line-height:1.2}.hero p,.about p{max-width:33ch;color:var(--soft)}.label{font-size:.8rem;font-weight:650;letter-spacing:.1em;text-transform:uppercase}canvas{display:block;width:100%;height:auto;background:#d9dfc3}.hero canvas{aspect-ratio:1.1}.section-head{border-top:1px solid var(--line);padding-top:1.25rem;display:flex;align-items:end;justify-content:space-between;gap:1rem;flex-wrap:wrap}h2{font:400 clamp(2.25rem,6vw,5.75rem)/1.22 Georgia,serif;letter-spacing:-.05em}.switch{display:flex;gap:.3rem;flex-wrap:wrap}button{border:1px solid var(--line);background:transparent;border-radius:999px;padding:.45rem .9rem}button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--paper)}button:disabled{opacity:.45;cursor:default}button:hover:not(:disabled):not([aria-pressed=true]){background:var(--accent)}.controls{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}.controls button{min-width:2.75rem}.explore{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(1rem,5vw,5rem);margin-top:2rem}.stage{position:sticky;top:1rem;align-self:start}.stage canvas{aspect-ratio:1.45}.controls{margin-top:.8rem}progress{flex:1;min-width:3rem;accent-color:#596d3d}.steps article{min-height:67vh;display:flex;flex-direction:column;justify-content:center;align-items:start;gap:.7rem;border-top:1px solid var(--line);padding:1.7rem 0;scroll-margin-top:2rem}.steps article:first-child{border-top:0}.steps article[aria-current=true] .label{background:var(--accent);padding-inline:.45rem}.steps h3,.catalog h3{font:400 clamp(1.7rem,3.5vw,3rem)/1.15 Georgia,serif}.steps p,.catalog p{color:var(--soft)}.catalog{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-block:2rem 4rem}.catalog article{min-width:0}.catalog canvas{aspect-ratio:1.45;margin-bottom:.75rem}.catalog.list{grid-template-columns:1fr;gap:0}.catalog.list article{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:1.25rem;align-items:center;border-top:1px solid var(--line);padding-block:1rem}.catalog.list canvas{margin:0}.about{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;padding-block:clamp(2rem,7vw,6rem);border-top:1px solid var(--line)}details{margin-top:1.25rem;padding-block:.7rem;border-block:1px solid var(--line)}summary{cursor:pointer}details p{margin-top:.75rem}footer{display:flex;justify-content:space-between;gap:.75rem;flex-wrap:wrap;padding-block:1.25rem;border-top:1px solid var(--line)}[hidden]{display:none!important}html{scroll-behavior:smooth}.stage canvas{transition:background-color var(--duration) var(--ease)}
+@media(max-width:760px){.hero,.explore,.about{grid-template-columns:1fr}.hero h1{font-size:clamp(3.4rem,15vw,7rem)}.stage{position:static}.steps article{min-height:0}.catalog{grid-template-columns:1fr}.catalog.list article{grid-template-columns:minmax(0,1fr) minmax(0,1.5fr)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.stage canvas{transition:none}}
+</style>
+</head>
+<body id="top">
+<header><a class="brand" href="#top">박연서</a><nav aria-label="페이지 메뉴"><a href="#work">작업</a><a href="#about">소개</a></nav></header>
+<main>
+<section class="hero" aria-labelledby="title"><div><p class="label">명지대학교 산업경영공학과</p><h1 id="title"><span>박연서</span><span>Portfolio</span></h1><p>여러 AI 에이전트가 일을 나누고, 서로의 결과를 이어받는 방식을 탐구합니다.</p></div><canvas width="900" height="820" id="cover" role="img" aria-label="연두색 배경 위에 겹쳐진 종이 띠"></canvas></section>
+<section id="work" aria-labelledby="work-title">
+<div class="section-head"><h2 id="work-title">Projects</h2><div class="switch" role="group" aria-label="작업 보기 방식"><button type="button" data-mode="explore" aria-pressed="true">탐색</button><button type="button" data-mode="grid" aria-pressed="false">그리드</button><button type="button" data-mode="list" aria-pressed="false">목록</button></div></div>
+<div class="explore" id="explore"><figure class="stage"><canvas width="960" height="662" id="stage" role="img" aria-label="현재 작업 미리보기"></canvas><figcaption class="controls"><button type="button" id="previous" aria-label="이전 작업">←</button><span id="count" aria-label="현재 작업 번호"></span><progress id="progress" max="1" aria-label="작업 탐색 진행도"></progress><button type="button" id="next" aria-label="다음 작업">→</button></figcaption></figure>
+<div class="steps">
+<article id="study-1"><span class="label">01 · Project</span><h3>AI 타로카드</h3><p>특강에서 만든 모바일 웹서비스 ‘오늘의 타로’입니다. 닉네임과 생년월일을 입력하고 관심 주제를 고르면 카드 한 장과 짧은 해석을 볼 수 있습니다.</p><a href="https://mace-wok-57639690.figma.site/">AI 타로카드 체험하기</a></article>
+<article id="study-2"><span class="label">02 · Process</span><h3>타로카드 기획과 검토</h3><p>기획 문서와 와이어프레임으로 입력부터 결과까지의 흐름을 정리하고, Figma Make로 제작하고 배포했습니다. 연애 주제로 카드와 해석이 표시되는 결과를 직접 확인했습니다.</p></article>
+<article id="study-3"><span class="label">03 · Research</span><h3>멀티 에이전트 협업</h3><p>기획·구현·검토를 여러 AI 에이전트가 나눠 맡는 프로젝트를 해보고 싶습니다. 단계별 입력과 완료 기준을 정하고, 수정 요청을 어느 단계에서 반영할지 살펴볼 계획입니다.</p></article>
+</div></div>
+<div class="catalog" id="catalog" hidden></div>
+</section>
+<section class="about" id="about" aria-labelledby="about-title"><h2 id="about-title">About</h2><div><p>명지대학교에서 산업경영공학을 전공합니다. 여러 AI 에이전트가 함께 과제를 해결할 때 역할 분담, 중간 결과 전달, 최종 검토 방식이 협업에 어떤 영향을 주는지에 관심이 있습니다.</p><details><summary>다음에 탐구할 질문</summary><p>일은 어떤 단위로 나누는 게 좋을까요? 다음 에이전트에게 어떤 결과를 전달해야 할까요? 마지막에는 누가 무엇을 검토해야 할까요?</p></details></div></section>
+</main>
+<footer><span>박연서</span><a href="#top">맨 위로 ↑</a></footer>
+<script>
+const cover = document.querySelector('#cover');
+const stage = document.querySelector('#stage');
+const explore = document.querySelector('#explore');
+const catalog = document.querySelector('#catalog');
+const articles = [...document.querySelectorAll('.steps article')];
+const modes = [...document.querySelectorAll('[data-mode]')];
+const previous = document.querySelector('#previous');
+const next = document.querySelector('#next');
+const count = document.querySelector('#count');
+const progress = document.querySelector('#progress');
+const mobile = matchMedia('(max-width: 760px)');
+const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+const palettes = [
+  ['#d9dfc3','#849463','#bbc997','#ebf1d6','#424f39'],
+  ['#252d43','#a6a1d6','#716bb6','#def4ef','#515e86'],
+  ['#f2d4b5','#bb695c','#ebae74','#f8e6ca','#883e40']
+];
+let active = 0;
+let frame = 0;
+const clamp = (value, low, high) => Math.max(low, Math.min(high, value));
+
+function draw(canvas, index, offset = 0, alpha = 1) {
+  const ctx = canvas.getContext('2d');
+  const {width, height} = canvas;
+  const [base, middle, pale, bright, dark] = palettes[index];
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  ctx.fillStyle = base;
+  ctx.fillRect(0, 0, width, height);
+  ctx.translate(width / 2 + offset, height / 2);
+  if (index === 1) {
+    for (let ring = 18; ring > 0; ring--) {
+      const radius = ring * height * .022;
+      ctx.beginPath();
+      ctx.ellipse(ring * 4 - 44, ring * -2 + 17, radius * 1.24, radius, -.32, 0, Math.PI * 2);
+      ctx.fillStyle = ring % 3 === 0 ? middle : dark;
+      ctx.fill();
+      ctx.lineWidth = 1.5;
+      ctx.strokeStyle = pale;
+      ctx.stroke();
+    }
+    ctx.fillStyle = bright;
+    ctx.fillRect(-47, 12, 11, 11);
+  } else {
+    ctx.rotate(index === 0 ? -.57 : .22);
+    for (let strip = 0; strip < 11; strip++) {
+      const x = (strip - 5.5) * width * .063;
+      const y = Math.sin(strip * .73) * height * .16 - height * .23;
+      const gradient = ctx.createLinearGradient(x, y, x + width * .075, y);
+      gradient.addColorStop(0, dark);
+      gradient.addColorStop(.19, strip % 2 ? middle : pale);
+      gradient.addColorStop(.85, strip % 2 ? pale : bright);
+      gradient.addColorStop(1, middle);
+      ctx.fillStyle = gradient;
+      ctx.fillRect(x, y, width * .065, height * (.42 + strip % 3 * .06));
+    }
+  }
+  ctx.restore();
+}
+
+function update() {
+  frame = 0;
+  if (explore.hidden) return;
+  let position = active;
+  if (!mobile.matches) {
+    const centers = articles.map(article => {
+      const bounds = article.getBoundingClientRect();
+      return bounds.top + bounds.height / 2;
+    });
+    const midpoint = innerHeight / 2;
+    const segment = midpoint >= centers[1] ? 1 : 0;
+    const nearestCenter = centers.findIndex(center => Math.abs(center - midpoint) <= 1);
+    position = nearestCenter >= 0 ? nearestCenter : segment + clamp((midpoint - centers[segment]) / (centers[segment + 1] - centers[segment]), 0, 1);
+  }
+  active = Math.round(position);
+  const base = Math.floor(position);
+  const fraction = position - base;
+  const offset = reduced.matches ? 0 : Math.round(fraction * -52);
+  if (reduced.matches) {
+    draw(stage, active);
+  } else {
+    draw(stage, base, offset);
+    if (fraction > 0) draw(stage, base + 1, Math.round((1 - fraction) * 52), fraction);
+  }
+  stage.dataset.index = active;
+  stage.dataset.offset = offset;
+  stage.dataset.progress = position.toFixed(3);
+  stage.setAttribute('aria-label', articles[active].querySelector('h3').textContent);
+  articles.forEach((article, index) => article.setAttribute('aria-current', String(active === index)));
+  previous.disabled = active === 0;
+  next.disabled = active === articles.length - 1;
+  count.textContent = `${active + 1} / ${articles.length}`;
+  progress.value = position / (articles.length - 1);
+}
+
+function scheduleUpdate() {
+  if (!frame) frame = requestAnimationFrame(update);
+}
+
+function move(direction) {
+  const destination = clamp(active + direction, 0, articles.length - 1);
+  if (mobile.matches) {
+    active = destination;
+    update();
+    return;
+  }
+  const bounds = articles[destination].getBoundingClientRect();
+  scrollTo({top: scrollY + bounds.top + bounds.height / 2 - innerHeight / 2, behavior: reduced.matches ? 'instant' : 'smooth'});
+}
+
+draw(cover, 0);
+articles.forEach((article, index) => {
+  const card = document.createElement('article');
+  const canvas = document.createElement('canvas');
+  canvas.width = 960;
+  canvas.height = 662;
+  canvas.setAttribute('aria-hidden', 'true');
+  const description = document.createElement('div');
+  for (const child of article.children) description.append(child.cloneNode(true));
+  card.append(canvas, description);
+  catalog.append(card);
+  draw(canvas, index);
+});
+modes.forEach(button => button.addEventListener('click', () => {
+  const mode = button.dataset.mode;
+  modes.forEach(option => option.setAttribute('aria-pressed', String(option === button)));
+  explore.hidden = mode !== 'explore';
+  catalog.hidden = !explore.hidden;
+  catalog.classList.toggle('list', mode === 'list');
+  scheduleUpdate();
+}));
+previous.addEventListener('click', () => move(-1));
+next.addEventListener('click', () => move(1));
+addEventListener('scroll', scheduleUpdate, {passive:true});
+addEventListener('resize', scheduleUpdate);
+reduced.addEventListener('change', scheduleUpdate);
+update();
+</script>
+</body>
+</html>
